@@ -10,7 +10,8 @@ export default function Employee() {
         const res = await axios.get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
         setEmployeeData(res.data);
       } catch (error) {
-        console.error('fetchDataFailed',error);
+        console.error(error);
+        alert('fetchDataFailed')
       }     
     }
     fetchData();
