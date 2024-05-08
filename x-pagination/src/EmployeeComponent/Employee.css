@@ -29,7 +29,7 @@
   border-bottom:2px solid #35a268;
 }
 
-.pagination-button button{
+.pagination-button button {
   background-color:  #35a268;
   padding:10px;
   margin: 10px;
@@ -38,6 +38,14 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+.pagination-button p{
+  background-color:  #35a268;
+  padding:10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: white;
 }
 
 .pagination-button{

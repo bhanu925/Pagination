@@ -4,11 +4,14 @@ import './Employee.css';
 
 export default function Employee() {
 
-
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
-      setEmployeeData(res.data);
+      try {
+        const res = await axios.get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
+        setEmployeeData(res.data);
+      } catch (error) {
+        console.error('fetchDataFailed',error);
+      }     
     }
     fetchData();
   },[])
@@ -44,7 +47,7 @@ export default function Employee() {
     )
   }
   return (
-    <div className="container">
+    <div>
 
       <div className='header'>
         <h2>Employee Data Table</h2>
@@ -66,7 +69,7 @@ export default function Employee() {
       
     <div className='pagination-button'>
       <button onClick={previous} disabled={currentPage === 1}>Previous</button>
-      <button>{currentPage}</button>
+      <p>{currentPage}</p>
       <button onClick={next} disabled={currentPage === Math.ceil(employeeData.length/10)}>Next</button>
     </div>
 
