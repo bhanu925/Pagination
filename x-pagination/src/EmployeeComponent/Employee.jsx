@@ -67,9 +67,9 @@ export default function Employee() {
       
       
     <div className='pagination-button'>
-      <button onClick={previous} disabled={currentPage === 1}>Previous</button>
+      <button onClick={previous} >Previous</button>
       <p>{currentPage}</p>
-      <button onClick={next} disabled={currentPage === Math.ceil(employeeData.length/10)}>Next</button>
+      <button onClick={next} >Next</button>
     </div>
 
     </div>
