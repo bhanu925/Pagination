@@ -10,7 +10,6 @@ export default function Employee() {
         const res = await axios.get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
         setEmployeeData(res.data);
       } catch (error) {
-        console.error(error);
         alert('fetchDataFailed')
       }     
     }
@@ -35,8 +34,7 @@ export default function Employee() {
   const renderTheEmployeeData=()=>{
     const startIndex = (currentPage-1)*10;
     const lastIndex = Math.min(startIndex+10,employeeData.length);
-    return employeeData.slice(startIndex,lastIndex).map((item,index)=>
-  
+    return employeeData.slice(startIndex,lastIndex).map((item,index)=>  
        (
         <tr>
           <td>{item.id}</td>
